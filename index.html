@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Multimediedesigner Portfolio" />
+    <meta name="description" content="Fronend udvikling" />
+    <meta name="description" content="Design" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <title>Mohanad | Portfolio</title>
+  </head>
+  <body>
+    <header class="section">
+      <nav class="navbar">
+        <div class="wrapper">
+          <a href="index.html"><img class="logo" src="assets/logo-1.svg" alt="logo" /></a>
+          <ul class="nav-links">
+            <li><a href="#Projekter">Projekter</a></li>
+            <li><a href="#about">Om mig</a></li>
+            <li><a href="kontakt.html">CV</a></li>
+          </ul>
+          <div class="burger" onclick="showSidebar()">&#9776;</div>
+        </div>
+      </nav>
+
+      <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="hideSidebar()">&times;</div>
+        <ul>
+          <li><a href="#Projekter" onclick="hideSidebar()">Projekter</a></li>
+          <li><a href="#about" onclick="hideSidebar()">Om mig</a></li>
+          <li><a href="kontakt.html" onclick="hideSidebar()">CV</a></li>
+        </ul>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item-one">
+          <h2>Kreativ</h2>
+          <h2><span class="auto-type"></span></h2>
+        </div>
+        <div class="grid-item-two">
+          <p>
+            Multimediedesigner <br />
+            Portfolio 2025 &copy;
+          </p>
+        </div>
+        <div class="grid-item-three">
+          <a href="#about"><p>&cudarrr;</p></a>
+        </div>
+        <div class="grid-item-four">
+          <img class="header-img" src="https://placehold.co/600x400/e1dfdd/e1dfdd" alt="Portfolio billed" />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <article>
+          <h2>Web developer & Designer</h2>
+        </article>
+        <div class="about-container">
+          <div class="container">
+            <a href="mailto:mohanad.aboud7@gmail.com"><img class="card" src="img/1739717175634.webp" alt="Portfolio billed" /></a>
+          </div>
+          <div class="custom-cursor" id="customCursor">KONTAKT</div>
+
+          <div class="right-side-container">
+            <div class="right-side-txt">
+              <h4>Om mig</h4>
+              <h2>Mohanad Aboud</h2>
+              <p>
+                Jeg er multimediedesigner med fokus på at skabe brugervenlige og visuelt engagerende digitale oplevelser, ved hjælp af programmering.
+                Jeg kombinerer min interesse for design og programmering for at udvikle løsninger, der både ser godt ud og fungerer.
+              </p>
+            </div>
+            <div class="right-side-btn">
+              <a href="mere.html"><button class="btn">Læs mere</button></a>
+              <a href="#"><button class="btn">Hent CV</button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Kompetencer" class="section">
+        <h2>Kompetencer</h2>
+        <div class="skill-wrapper">
+          <div class="skills">
+            <h4>WEB DEV</h4>
+            <p>
+              Jeg udvikler brugervenlige og responsive hjemmesider med fokus på performance. Jeg har erfaring med teknologier som HTML, CSS,JavaScript
+              og frameworket React.
+            </p>
+          </div>
+          <div class="skills">
+            <h4>DESIGN</h4>
+            <p>Med design kan jeg skabe visuelt appellerende elementer, der styrker kommunikationen og brandidentiteten i digitale produkter.</p>
+          </div>
+          <div class="skills">
+            <h4>UX/UI</h4>
+            <p>
+              Jeg designer engagerende brugeroplevelser. Gennem wireframes, prototyper og brugertests sikrer jeg, at hvert design er brugervenligt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="custom-cursor" id="slideCursor">Case</div>
+      <section id="Projekter" class="section">
+        <h2>Projekter</h2>
+        <!-- Slideshow container fra w3schools -->
+        <div class="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <a href="liberta.html" class="img-bubble">
+              <img src="img/pizza1.webp" alt="header billed af liberta pizzaria's hjemmeside " style="width: 100%"
+            /></a>
+          </div>
+
+          <div class="mySlides fade">
+            <a href="zerobuzz.html" class="img-bubble"
+              ><img src="img/zerobuzz1.webp" alt="header billed af zerobuzz brew's hjemmeside " style="width: 100%"
+            /></a>
+          </div>
+
+          <div class="mySlides fade">
+            <a href="nippon.html" class="img-bubble">
+              <img src="img/nippon1.webp" alt="header billed af nippons hjemmeside " style="width: 100%"
+            /></a>
+          </div>
+
+          <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+          <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+        <br />
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-line"></div>
+
+      <div class="footer-content">
+        <div class="footer-socials">
+          <a href="mailto:mohanad.aboud7@gmail.com" target="_blank" aria-label="Mohanad Aboud's Email">
+            <i class="fa-solid fa-square-envelope" aria-hidden="true"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank" aria-label="Visit Mohanad Aboud's LinkedIn profile">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+
+          <a href="https://github.com/MohanadAboud" target="_blank" aria-label="Visit Mohanad Aboud's GitHub profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+
+          <a href="#" target="_blank"><h4>CV</h4></a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/bubble.js"></script>
+
+    <script src="js/card.js"></script>
+
+    <script src="js/slide.js"></script>
+
+    <!-- Typing animation JS -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" <link rel="preconnect"></script>
+    <script>
+      var typed = new Typed('.auto-type', {
+        strings: ['^1000 Programmør', '^1000 Designer'],
+        typespeed: 1000000,
+        fadeOut: true,
+        backDelay: 2000,
+
+        loop: true,
+      })
+    </script>
+
+    <!-- burger menu -->
+    <script>
+      function showSidebar() {
+        document.getElementById('sidebar').style.display = 'block'
+      }
+
+      function hideSidebar() {
+        document.getElementById('sidebar').style.display = 'none'
+      }
+    </script>
+  </body>
+</html>

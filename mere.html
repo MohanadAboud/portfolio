@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Multimediedesigner Portfolio" />
+    <meta name="description" content="Fronend udvikling" />
+    <meta name="description" content="Design" />
+    <meta name="description" content="Mere om mig" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <title>Mohanad | Portfolio</title>
+  </head>
+  <body>
+    <header class="section">
+      <nav class="navbar">
+        <div class="wrapper">
+          <a href="index.html"><img class="logo" src="assets/logo-1.svg" alt="logo" /></a>
+          <ul class="nav-links">
+            <li><a href="index.html">Projekter</a></li>
+            <li><a href="index.html">Om mig</a></li>
+            <li><a href="kontakt.html">CV</a></li>
+          </ul>
+          <div class="burger" onclick="showSidebar()">&#9776;</div>
+        </div>
+      </nav>
+
+      <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="hideSidebar()">&times;</div>
+        <ul>
+          <li><a href="index.html" onclick="hideSidebar()">Projekter</a></li>
+          <li><a href="index.html" onclick="hideSidebar()">Om mig</a></li>
+          <li><a href="kontakt.html" onclick="hideSidebar()">CV</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="ommig-section">
+        <div class="om-wrap">
+          <img class="om-img" src="img/bg-non.webp" alt="" />
+          <div>
+            <h2>PASSION FOR PROGRAMMERING</h2>
+            <p>
+              Mit navn er Mohanad Aboud, jeg er 25 år gammel og studerer multimediedesign på Aarhus Erhvervsakademi, hvor jeg specialiserer mig i
+              Interface Design.
+            </p>
+            <p>
+              Jeg har en stor passion for at designe og udvikle digitale løsninger, der balancerer et flot design med brugervenlig funktionalitet. Min
+              interesse for programmering startede på første semester, da jeg første gang stødte på HTML, CSS og senere JavaScript. Siden da har jeg
+              fordybet mig i frontend-udvikling og løbende styrket mine kompetencer gennem både studiet og selvstudier.
+            </p>
+            <p>
+              For at styrke mine færdigheder har jeg taget flere kurser på LinkedIn Learning, hvor jeg har dygtiggjort mig inden for moderne
+              webteknologier. Jeg nyder at arbejde med responsivt design, interaktive elementer og at skabe brugervenlige oplevelser.
+            </p>
+            <h2>Værktøjer</h2>
+
+            <div class="værktøjer-wrapper" id="værktøjer">
+              <img class="værktøjer-item" src="assets/css-brands-solid.svg" alt="CSS-logo" />
+              <img class="værktøjer-item" src="assets/html5-brands-solid.svg" alt="HTML-logo" />
+              <img class="værktøjer-item" src="assets/js-brands-solid.svg" alt="Javascript-logo" />
+              <img class="værktøjer-item" src="assets/react-brands-solid.svg" alt="React-logo" />
+              <img class="værktøjer-item" src="assets/wordpress-brands-solid.svg" alt="Wordpress-logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-line"></div>
+
+      <div class="footer-content">
+        <div class="footer-socials">
+          <a href="mailto:mohanad.aboud7@gmail.com" target="_blank" aria-label="Mohanad Aboud's Email">
+            <i class="fa-solid fa-square-envelope" aria-hidden="true"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank" aria-label="Visit Mohanad Aboud's LinkedIn profile">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+
+          <a href="https://github.com/MohanadAboud" target="_blank" aria-label="Visit Mohanad Aboud's GitHub profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+
+          <a href="#" target="_blank"><h4>CV</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- burger menu -->
+    <script>
+      function showSidebar() {
+        document.getElementById('sidebar').style.display = 'block'
+      }
+
+      function hideSidebar() {
+        document.getElementById('sidebar').style.display = 'none'
+      }
+    </script>
+  </body>
+</html>

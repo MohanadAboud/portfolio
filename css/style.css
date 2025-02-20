@@ -1,0 +1,727 @@
+:root {
+  --prime: #e1dfdd;
+  --black: #000;
+  --faded: #0000001f;
+  --green: #6c7558;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PP Neue Montreal', 'monospace';
+}
+
+body {
+  background-color: var(--faded);
+  color: var(--black);
+}
+
+/* til scroll baren */
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+  outline: 1px solid var(--faded);
+}
+
+/*  */
+
+.section {
+  scroll-snap-align: center;
+  max-width: 1366px;
+  margin: auto;
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+header {
+  height: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--prime);
+}
+
+.wrapper {
+  max-width: 1366px;
+  margin: auto;
+  padding: 1rem 1rem 0rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  color: var(--black);
+  display: inline-block;
+  height: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* sort streg under nav links  */
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--black);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.nav-links a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* burger menu open og close CSS */
+.burger {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--prime);
+  z-index: 10000;
+}
+
+.sidebar ul {
+  list-style: none;
+  text-align: center;
+}
+
+.sidebar li {
+  margin: 4rem 0rem;
+}
+.sidebar a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close-btn {
+  font-size: 4rem;
+  cursor: pointer;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+/* grid til hero section */
+.grid-container {
+  position: relative;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12, 1fr));
+  grid-gap: 2rem;
+  grid-template-areas:
+    'one one one one one one one one one one one one '
+    '. . . . . . . . . four four four '
+    'two two two . . . . . . . . three';
+  align-items: end;
+}
+
+/* Grid Items */
+.grid-item-one {
+  grid-area: one;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 77px;
+}
+
+.grid-item-two {
+  grid-area: two;
+  font-size: 2rem;
+}
+
+.grid-item-three {
+  grid-area: three;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.grid-item-three p {
+  display: inline-block;
+  color: var(--black);
+}
+
+/* bruges til animationen af min arrow */
+.grid-item-three a p:hover {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.grid-item-four {
+  grid-area: four;
+}
+
+.header-img {
+  height: 200px;
+  width: 600px;
+}
+
+/* OM MIG Section */
+
+#about > article > h2 {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 7rem 15rem;
+  max-width: 1240px;
+}
+
+.right-side-txt {
+  max-width: 700px;
+  gap: 0.5rem;
+}
+.right-side-txt > h2 {
+  display: inline;
+  background-color: rgba(202, 205, 50, 0.588);
+  font-style: italic;
+}
+
+div.right-side-txt > p {
+  margin: 1rem 0rem 1rem 0rem;
+  max-width: 40ch;
+}
+
+.container {
+  transition: all 0.2s;
+}
+.card {
+  border-radius: 50px 50px 50px 50px;
+  height: 375px;
+  width: 300px;
+}
+
+.right-side-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.btn {
+  background-color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  color: var(--prime);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 16px;
+}
+
+.btn:not([disabled]):active {
+  box-shadow: var(--prime) 2px 2px 0 0, var(--black) 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+/* SKILLSET */
+
+#Kompetencer {
+  margin: 4rem auto;
+}
+#Kompetencer h2 {
+  /* margin-top: 4rem; */
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+#Kompetencer h4 {
+  margin: 0.5rem 0rem;
+}
+
+.skill-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skills {
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 0;
+
+  line-height: 1.6;
+}
+
+/* værktøjer */
+
+#værktøjer h2 {
+  /* margin-top: 4rem; */
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.værktøjer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.værktøjer-item {
+  width: 48px;
+}
+
+/* projekter */
+
+#Projekter {
+  margin-bottom: 6rem;
+}
+
+#Projekter > h2 {
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+/* projekt på landing page */
+/* Slideshow container */
+/* fra w3school */
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--black);
+  background-color: var(--prime);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* til individuel projekt sektion */
+
+.projekt-container {
+  display: flex;
+  max-width: 1366px;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+/* Left Side: Scrolling Text */
+.text-section {
+  width: 50%;
+  padding: 20px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+.text-section h6 {
+  margin-top: 1rem;
+}
+
+.image-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.image-section img {
+  margin: 0 0 4rem 0;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projekt-btn {
+  padding: 20px;
+  max-width: 1366px;
+  margin: auto;
+  margin-bottom: 6rem;
+}
+
+/* til mere om mig siden */
+
+.ommig-section {
+  max-width: 1036px;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  height: 100vh;
+}
+
+.om-wrap {
+  display: flex;
+  gap: 4rem;
+}
+
+.ommig-section h2 {
+  margin-bottom: 2rem;
+}
+.ommig-section p {
+  margin-bottom: 1rem;
+}
+
+.om-img {
+  border-radius: 50px 50px 50px 50px;
+  height: 500px;
+  width: 500px;
+}
+
+/* Footer */
+#footer {
+  height: 50vh;
+  max-width: 1366px;
+  margin: auto;
+}
+
+.footer-content {
+  text-decoration: none;
+  list-style: none;
+}
+
+.footer-content a {
+  text-decoration: none;
+  padding-bottom: 1rem;
+  color: var(--black);
+}
+
+.footer-socials {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  gap: 4rem;
+  align-items: flex-end;
+  margin: 5rem;
+}
+.footer-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--black);
+}
+
+/* breakpoint */
+
+@media (max-width: 1106px) {
+  .grid-container {
+    grid-template-areas:
+      'one one one one .'
+      'four four four four .'
+      'two two . . three ';
+  }
+  .footer-content h1 {
+    margin: 1rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  .about-container {
+    display: flex;
+    gap: 4rem;
+    max-width: 768px;
+    margin: 1.375rem auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    border-radius: 100%;
+    height: 250px;
+    width: 200px;
+  }
+
+  .text-section {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+  .projekt-container {
+    display: flex;
+    max-width: 1366px;
+    margin: auto;
+    margin-top: 4rem;
+    flex-direction: column;
+  }
+  .image-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  #img-re {
+    display: none;
+  }
+
+  .ommig-section {
+    margin-bottom: 10rem;
+    padding: 2rem;
+  }
+  .om-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .om-img {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-gap: 2rem;
+  }
+
+  .grid-item-one {
+    line-height: 60px;
+  }
+  .grid-item-three {
+    display: none;
+  }
+
+  div.grid-item-one > h2 {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  div.grid-item-four > img {
+    width: 400px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .right-side-txt {
+    text-align: center;
+  }
+
+  .right-side-txt > h2 {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .right-side-txt > p {
+    text-align: left;
+  }
+
+  .right-side-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+
+  .skills {
+    flex: 1 1 100%;
+  }
+  .ommig-section {
+    padding: 2rem;
+    margin-bottom: 20rem;
+  }
+}
+
+@media (max-width: 633px) {
+  .header-img {
+    width: 400px;
+  }
+  .ommig-section {
+    padding: 2rem;
+    margin-bottom: 80rem;
+  }
+
+  .om-wrap {
+    gap: 2rem;
+  }
+
+  .ommig-section h2 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+  .ommig-section p {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .om-img {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 570px) {
+  .grid-item-two {
+    font-size: 3rem;
+  }
+
+  .grid-item-four {
+    height: 200px;
+  }
+  .ommig-section {
+    padding: 2rem;
+    margin-bottom: 110rem;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    width: 100vh;
+  }
+  .ommig-section {
+    padding: 2rem;
+    margin-bottom: 80rem;
+  }
+  .right-side-txt p {
+    font-size: 1.5rem;
+    max-width: 40ch;
+  }
+  .skills p {
+    font-size: 1.5rem;
+    max-width: 40ch;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+  #about > div > div.right-side-container > div.right-side-txt > h2 {
+    font-size: 3rem;
+  }
+
+  .btn {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: 4px;
+    color: var(--prime);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 16px 24px;
+  }
+}
+
+/* key frames animation til arrow knappen i header */
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Custom Cursor */
+/* hover over img  */
+#slideCursor,
+#customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: var(--green);
+  color: var(--prime);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s ease;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 10000;
+}
+.card:hover {
+  cursor: none;
+}
